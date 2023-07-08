@@ -1,0 +1,244 @@
+.header,
+.footer {
+    height: 50px;
+}
+
+.page-header-space {
+    height: 100px;
+    /* z-index: 555; */
+    padding: 50px;
+    /* background-color: yellow; */
+    /* z-index: -1; */
+}
+
+.page-footer-space {
+    height: 10px;
+    padding: 90px;
+
+    border-top: 1px solid rgb(7, 7, 6);
+    /* background-color: yellow; */
+    /* z-index: -1; */
+}
+
+
+
+
+
+.footer {
+    position: fixed;
+    bottom: 50px;
+    border: 2px solid green;
+    background-color: rgb(120, 245, 66);
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    /* z-index: -1; */
+    align-items: center;
+}
+
+/* .text{
+    position: running(text);
+} */
+.header {
+    position: fixed;
+    height: 100px;
+    top: -0px;
+    border: 2px solid rgb(255, 4, 129);
+    background-color: rgb(255, 174, 0);
+    display: flex;
+
+    width: 100%;
+    /* z-index: -1; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer::before {
+    background-color: rgb(0, 0, 0);
+    height: 20px;
+    padding: 10px;
+    width: 100%;
+    /* top: -90px; */
+    color: white;
+    content: 'Table Footer';
+    display: flex;
+    justify-content: center;
+}
+
+.footer::after {
+    height: 30px;
+    /* top: -100px; */
+    /* position: relative; */
+    bottom: 0;
+    /* content: "Page " counter(page) " of " counter(pages); */
+    /* counter-increment: page; */
+    /* display: block; */
+
+}
+
+@media screen {
+    .pageNumberDiv {
+        display: none;
+    }
+
+}
+
+.header::after {
+    background-color: rgb(0, 0, 0);
+    height: 20px;
+    content: 'Table Header';
+    padding: 10px;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.page-footer-space::after {
+    text-align: center;
+    counter-increment: page;
+    content: "Page " counter(page) " of " counter(page);
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+@page {
+    size: A4;
+    margin: 10mm;
+}
+
+@media print {
+    #Page1 {
+        background-color: rgb(34, 34, 32);
+        border: 3px solid;
+        position: relative;
+        top: -9480px;
+    }
+
+    #Page2{
+        background-color: rgb(34, 34, 32);
+        border: 3px solid;
+        position: relative;
+        top: -8470px;
+    }
+
+    #Page3 {
+        background-color: rgb(34, 34, 32);
+        border: 3px solid;
+        position: relative;
+        top: -7460px;
+    }
+
+    /* @page {
+        @bottom-center {
+            content: 'PAGEMMMMMMMMM';
+        }
+    } */
+
+    body {
+        margin: 0;
+    }
+
+    thead {
+        display: table-header-group;
+
+    }
+
+    .thead::before {
+        background-color: rgb(255, 40, 40);
+        height: 100px;
+        content: element(header);
+        /* position: fixed; */
+        width: 100%;
+        display: block;
+
+
+    }
+
+    .pagenumber {
+        background-color: rgb(186, 31, 31);
+        position: fixed;
+        content: 'Page ' counter(page) ' of ' counter(pages);
+        bottom: 0;
+        right: 0;
+
+    }
+
+    /* .sec-header-table {
+        position: fixed;
+        background-color: blue;
+        top: 0;
+        z-index: -1;
+        position: running(header);
+
+    } */
+
+    /* .page-header-space::after {
+        background-color: rgb(4, 251, 255);
+        height: 80px;
+        content: 'lorem2dbhcjdnsmcdkshjhcdj scdsjkcdjncsjcds4c53s4dc5sdcdjjkcbdsbcdsb';
+        width: 100%;
+        display: block;
+
+    } */
+
+    /* .sec-footer-table {
+        position: fixed;
+        background-color: blue;
+        bottom: 20px;
+
+    } */
+
+    tfoot {
+        display: table-footer-group;
+    }
+
+    button {
+        display: none;
+    }
+
+    body {
+        margin: 0;
+        counter-reset: page;
+    }
+
+    Table {
+        /* z-index: 999999999; */
+
+    }
+
+    table tr {
+        break-inside: avoid;
+    }
+
+
+
+
+    .top-header {
+        /* background-color: black;
+        /* height: 150px; 
+        position: fixed; */
+        /* top: 0; */
+    }
+
+    .pageNumberDiv {
+        background-color: black;
+        z-index: 999999;
+    }
+
+    /* @page{
+        first-page{
+            background-color: red;
+        }
+    } */
+}

@@ -1,0 +1,138 @@
+@media print {
+    @page {
+        display: block;
+        background: linear-gradient(rgb(214, 228, 121),rgb(203, 126, 126));
+
+        tr {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        @top-left {
+            content: element(topleft);
+
+        }
+
+        @top-right {
+            content: element(topright);
+            display: flex;
+
+        }
+
+        @bottom-left {
+            content: element(bottomleft);
+
+        }
+
+        @bottom-center {
+            content: 'Page '  counter(page) ' of ' counter(pages);
+
+        }
+
+        table,
+        tr {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+    }
+
+
+    tr {
+        break-inside: avoid;
+        /* page-break-inside: avoid; */
+
+        /* Display block to break the table */
+        display: block;
+        /* margin: 10px; */
+    }
+
+    table th {
+
+        /* page-break-inside: avoid; */
+        /* display:block; */
+        /* flex-direction: column; */
+    }
+    
+    
+    table {
+        border-collapse: collapse;
+        /* display: block; */
+    }
+
+    button {
+        display: none;
+    }
+
+}
+@media screen {
+    /* .header{
+        display: none;
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+    .footer{
+        display: none;
+        position: absolute;
+        bottom: 0;
+        display: none;
+    }
+    .content{
+        display: none;
+    }  */
+    
+}
+
+@page {
+    /* size: 'A4'; */
+    /* margin: 20mm; */
+
+    background-color: rgb(166, 243, 118);
+
+    @top-left {
+        content: element(topleft);
+
+    }
+
+    @top-right {
+        content: element(topright);
+        /* display: flex; */
+
+    }
+
+    @bottom-left {
+        content: element(bottomleft);
+
+    }
+
+    @bottom-center {
+        content: 'Page' counter(page) ' of ' counter(pages);
+
+    }
+
+    /* tr{
+        break-inside: avoid-column;
+        page-break-inside: avoid;
+    } */
+    table,
+    tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+.header {
+    background-color: rgb(224, 62, 62);
+    color: white;
+    position: running(topleft);
+}
+
+
+
+.footer {
+    background-color: rgb(224, 62, 62);
+    color: white;
+    position: running(bottomleft);
+    z-index: 999999;
+
+}
